@@ -7,6 +7,8 @@ The infrastructure team has made these modifications with the fork:
 
 - Use `https` requests from the UI client with a `USE_HTTPS` environment flag
 - Override the emulator endpoints that the client makes requests to with `CLIENT_{emulator-name}_HOST` and `CLIENT_{emulator-port}_PORT` environment variables
+- Dockerized the repo and publishing them as images to be used internally
+- Much easier local development on this repo with `docker compose build` and `docker compose run --service-ports infra-firebase`
 
 This fork is originally intended to be used within ephemeral environments as a way of visualizing the emulators used within that private ephemeral network.
 
