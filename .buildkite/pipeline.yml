@@ -1,0 +1,53 @@
+env:
+  VERSION: '1.7.0'
+
+steps:
+  - label: ':wrench: Build Staging Image'
+    branches: 'main'
+    plugins:
+      - ssh://git@github.com/pachama/docker-build-buildkite-plugin#v3.1.5:
+          docker_compose_file: 'docker-compose.yml'
+          docker_image: 'infra-firebase'
+          tag: '$VERSION'
+          namespace: 'infra'
+          env: 'staging'
+
+  - label: ':wrench: Build Buildkite Image'
+    branches: 'main'
+    plugins:
+      - ssh://git@github.com/pachama/docker-build-buildkite-plugin#v3.1.5:
+          docker_compose_file: 'docker-compose.yml'
+          docker_image: 'infra-firebase'
+          tag: '$VERSION'
+          namespace: 'infra'
+          env: 'buildkite'
+
+  - label: ':wrench: Build Production Image'
+    branches: 'main'
+    plugins:
+      - ssh://git@github.com/pachama/docker-build-buildkite-plugin#v3.1.5:
+          docker_compose_file: 'docker-compose.yml'
+          docker_image: 'infra-firebase'
+          tag: '$VERSION'
+          namespace: 'infra'
+          env: 'production'
+
+  - label: ':wrench: Build Ephemeral Image'
+    branches: 'main'
+    plugins:
+      - ssh://git@github.com/pachama/docker-build-buildkite-plugin#v3.1.5:
+          docker_compose_file: 'docker-compose.yml'
+          docker_image: 'infra-firebase'
+          tag: '$VERSION'
+          namespace: 'infra'
+          env: 'ephemeral'
+
+  - label: ':wrench: Build Labs Image'
+    branches: 'main'
+    plugins:
+      - ssh://git@github.com/pachama/docker-build-buildkite-plugin#v3.1.5:
+          docker_compose_file: 'docker-compose.yml'
+          docker_image: 'infra-firebase'
+          tag: '$VERSION'
+          namespace: 'infra'
+          env: 'labs'

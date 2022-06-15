@@ -1,3 +1,15 @@
+[![Build status](https://badge.buildkite.com/e7109b1661215d1a1fdf85315c58daf0a08dd55290941166c3.svg)](https://buildkite.com/pachama/infra-firebase-tools-ui)
+
+# Infrastructure Modifications
+
+This is a fork of an official web UI for Firebase Emulator Suite.
+The infrastructure team has made these modifications with the fork:
+
+- Use `https` requests from the UI client with a `USE_HTTPS` environment flag
+- Override the emulator endpoints that the client makes requests to with `CLIENT_{emulator-name}_HOST` and `CLIENT_{emulator-port}_PORT` environment variables
+
+And now on to the official docs:
+
 # Firebase Emulator UI
 
 The web UI for Firebase Emulator Suite. Features include:

@@ -1,8 +1,8 @@
 version: '3.4'
 services:
-  firebase:
-    image: firebase
-    container_name: firebase
+  infra-firebase:
+    image: infra-firebase
+    container_name: infra-firebase
     entrypoint: /bin/bash
     # entrypoint: firebase emulators:exec --config /home/firebase/firebase.json --project my-project --import /data/export --export-on-exit --debug "HOST=0.0.0.0 PORT=4000 USE_HTTPS="true" CLIENT_AUTH_PORT=443 CLIENT_AUTH_HOST=aron.firebase-emulator-auth.ephemeral.pachama.com node server.bundle.js/main.js"
     build:
