@@ -25,6 +25,9 @@ const fetch = require('node-fetch').default;
 const path = require('path');
 const dns = require('dns');
 const { URL } = require('url');
+const {
+  ValueDisplay,
+} = require('./src/components/Database/DataViewer/ValueDisplay');
 
 dns.setDefaultResultOrder('ipv4first');
 
@@ -89,15 +92,18 @@ exports.registerApis = function (app) {
         }
       }
 
-      if (json.auth) {
-        json.auth.host = process.env.CLIENT_AUTH_HOST || json.auth.host;
-        json.auth.port = process.env.CLIENT_AUTH_PORT || json.auth.port;
-      }
-      if (process.env.USE_HTTPS) {
-        for (const [key, _] of Object.entries(json)) {
-          if (key === 'projectId') {
-            continue;
-          }
+      for (const [key, value] of Object.entries(json)) {
+        if (key === 'projectId') {
+          continue;
+        }
+        const name = String(value.name).toUpperCase();
+        if (process.env[`CLIENT_${name}_HOST`]) {
+          json[key].host = process.env[`CLIENT_${name}_HOST`];
+        }
+        if (process.env[`CLIENT_${name}_PORT`]) {
+          json[key].port = process.env[`CLIENT_${name}_PORT`];
+        }
+        if (process.env.USE_HTTPS) {
           json[key].useHttps = true;
         }
       }
