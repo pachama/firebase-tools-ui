@@ -8,6 +8,8 @@ The infrastructure team has made these modifications with the fork:
 - Use `https` requests from the UI client with a `USE_HTTPS` environment flag
 - Override the emulator endpoints that the client makes requests to with `CLIENT_{emulator-name}_HOST` and `CLIENT_{emulator-port}_PORT` environment variables
 
+This fork is originally intended to be used within ephemeral environments as a way of visualizing the emulators used within that private ephemeral network.
+
 And now on to the official docs:
 
 # Firebase Emulator UI
