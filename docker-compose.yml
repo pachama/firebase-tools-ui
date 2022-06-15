@@ -24,3 +24,4 @@ services:
     volumes:
       - ./src:/home/firebase/src
       - ./server.js:/home/firebase/server.js
+      - ./firebase.json:/home/firebase/firebase.json

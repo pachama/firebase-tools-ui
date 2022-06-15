@@ -25,9 +25,6 @@ const fetch = require('node-fetch').default;
 const path = require('path');
 const dns = require('dns');
 const { URL } = require('url');
-const {
-  ValueDisplay,
-} = require('./src/components/Database/DataViewer/ValueDisplay');
 
 dns.setDefaultResultOrder('ipv4first');
 
