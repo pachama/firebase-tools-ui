@@ -33,6 +33,7 @@ export const TestExtensionsProvider: React.FC<
   const emulatorConfig: Config = {
     projectId: 'example',
     extensions: {
+      useHttps: false,
       hostAndPort: 'google.com:1234',
       host: 'google.com',
       port: 1234,

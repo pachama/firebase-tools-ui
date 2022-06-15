@@ -39,7 +39,7 @@ export function initDatabase(
   config: DatabaseConfig,
   namespace: string
 ): [firebase.database.Database, { cleanup: () => Promise<void> }] {
-  const databaseURL = `http://${config.hostAndPort}/?ns=${namespace}`;
+  const databaseURL = `${config.useHttps ? 'https://' : 'http://'}${config.hostAndPort}/?ns=${namespace}`;
   const app = firebase.initializeApp(
     { databaseURL },
     `Database Component: ${databaseURL} ${Math.random()}`

@@ -32,6 +32,7 @@ describe('useFunctionsEmulator', () => {
           config={{
             projectId: '',
             extensions: {
+              useHttps: false,
               hostAndPort,
               host: 'pirojok',
               port: 689,

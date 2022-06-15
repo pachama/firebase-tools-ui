@@ -107,6 +107,7 @@ export const CONFIG_WITH_EXTENSION = {
     hostAndPort: 'lol',
     host: 'pirojok',
     port: 689,
+    useHttps: false,
   },
 };
 

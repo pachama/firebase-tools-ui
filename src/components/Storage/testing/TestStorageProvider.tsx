@@ -36,7 +36,7 @@ export const TestStorageProvider: React.FC<
     <TestEmulatorConfigProvider
       config={{
         projectId,
-        storage: { hostAndPort, host, port: Number(port) },
+        storage: { hostAndPort, host, port: Number(port), useHttps: false },
       }}
     >
       {children}

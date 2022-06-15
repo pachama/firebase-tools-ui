@@ -36,7 +36,7 @@ export function useCreateFolder() {
     const encodedPath = encodeURIComponent(normalizedPath);
 
     await fetch(
-      `http://${
+      `${config!.useHttps ? 'https://' : 'http://'}${
         config!.hostAndPort
       }/upload/storage/v1/b/${bucket}/o?name=${encodedPath}/`,
       {

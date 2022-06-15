@@ -207,6 +207,7 @@ async function configFetcher(url: string): Promise<Config> {
     result[key as Emulator] = {
       ...value,
       host,
+      useHttps: value.useHttps as boolean,
       hostAndPort: hostAndPort(host, value.port as number),
     };
   }

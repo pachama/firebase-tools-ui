@@ -37,13 +37,14 @@ export default class AuthApi extends RestApi {
   // clients and infers projectId, which can lead to unexpected mismatches.
 
   // https://cloud.google.com/identity-platform/docs/reference/rest/v1/projects.accounts
-  private readonly baseUrl = `http://${this.hostAndPort}/identitytoolkit.googleapis.com/v1/projects/${this.projectId}`;
-  private readonly baseEmulatorUrl = `http://${this.hostAndPort}/emulator/v1/projects/${this.projectId}`;
+  private readonly baseUrl = `${this.useHttps ? 'https://' : 'http://'}${this.hostAndPort}/identitytoolkit.googleapis.com/v1/projects/${this.projectId}`;
+  private readonly baseEmulatorUrl = `${this.useHttps ? 'https://' : 'http://'}${this.hostAndPort}/emulator/v1/projects/${this.projectId}`;
 
   constructor(
     private readonly hostAndPort: string,
-    private readonly projectId: string
-  ) {
+    private readonly projectId: string,
+    private readonly useHttps: boolean = false
+    ) {
     super();
   }
 

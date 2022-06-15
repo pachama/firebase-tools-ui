@@ -77,7 +77,7 @@ export const FirestoreTestProviders: React.FC<
     <TestEmulatorConfigProvider
       config={{
         projectId,
-        firestore: { host, port: Number(port), hostAndPort },
+        firestore: { host, port: Number(port), hostAndPort, useHttps: false },
       }}
     >
       <FirestoreEmulatedApiProvider disableDevTools>

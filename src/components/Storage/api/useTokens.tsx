@@ -25,7 +25,7 @@ export function useTokens(fullPath: string) {
   const key = `storage/tokens/${bucket}/${fullPath}`;
 
   const fetcher = async () => {
-    const url = `http://${
+    const url = `${config.useHttps ? 'https://' : 'http://'}${
       config.hostAndPort
     }/v0/b/${bucket}/o/${encodeURIComponent(fullPath)}`;
 
@@ -45,7 +45,7 @@ export function useTokens(fullPath: string) {
 
   async function createToken() {
     await fetch(
-      `http://${config!.hostAndPort}/v0/b/${bucket}/o/${encodeURIComponent(
+      `${config!.useHttps ? 'https://' : 'http://'}${config!.hostAndPort}/v0/b/${bucket}/o/${encodeURIComponent(
         fullPath
       )}?create_token=true`,
 
@@ -60,7 +60,7 @@ export function useTokens(fullPath: string) {
 
   async function deleteToken(token: string) {
     await fetch(
-      `http://${config!.hostAndPort}/v0/b/${bucket}/o/${encodeURIComponent(
+      `${config!.useHttps ? 'https://' : 'http://'}${config!.hostAndPort}/v0/b/${bucket}/o/${encodeURIComponent(
         fullPath
       )}?delete_token=${token}`,
       {

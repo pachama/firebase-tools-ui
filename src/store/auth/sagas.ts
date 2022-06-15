@@ -69,7 +69,8 @@ export function* initAuth({ payload }: ActionType<typeof updateAuthConfig>) {
   yield setContext({
     [AUTH_API_CONTEXT]: new AuthApi(
       payload.auth.hostAndPort,
-      payload.projectId
+      payload.projectId,
+      payload.auth.useHttps
     ),
   });
   yield all([

@@ -1,0 +1,26 @@
+version: '3.4'
+services:
+  firebase:
+    image: firebase
+    container_name: firebase
+    entrypoint: /bin/bash
+    # entrypoint: firebase emulators:exec --config /home/firebase/firebase.json --project my-project --import /data/export --export-on-exit --debug "HOST=0.0.0.0 PORT=4000 USE_HTTPS="true" CLIENT_AUTH_PORT=443 CLIENT_AUTH_HOST=aron.firebase-emulator-auth.ephemeral.pachama.com node server.bundle.js/main.js"
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    stdin_open: true
+    tty: true
+    env_file: .env
+    ports:
+      - 3000:3000
+      - 4000:4000
+      - 4400:4400
+      - 5001:5001
+      - 8085:8085
+      - 8081:8081
+      - 9000:9000
+      - 9099:9099
+      - 9199:9199
+    volumes:
+      - ./src:/home/firebase/src
+      - ./server.js:/home/firebase/server.js

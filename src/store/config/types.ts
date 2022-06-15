@@ -15,6 +15,7 @@
  */
 
 export interface EmulatorConfig {
+  useHttps: boolean;
   hostAndPort: string;
   host: string;
   port: number;

@@ -30,6 +30,7 @@ const sampleConfig: AuthConfig = {
   host,
   port,
   hostAndPort: `${host}:${port}`,
+  useHttps: false
 };
 
 describe('AuthRoute', () => {

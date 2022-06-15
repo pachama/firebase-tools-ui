@@ -95,6 +95,7 @@ describe('ExtensionsRoute', () => {
           emulatorConfig={{
             projectId: 'example',
             extensions: {
+              useHttps: false,
               hostAndPort: 'foo',
               host: 'foo',
               port: 1234,
@@ -130,6 +131,7 @@ describe('ExtensionsRoute', () => {
           emulatorConfig={{
             projectId: 'example',
             extensions: {
+              useHttps: true,
               hostAndPort: 'foo',
               host: 'foo',
               port: 1234,

@@ -17,5 +17,5 @@ import { useEmulatorConfig } from '../../../common/EmulatorConfigProvider';
 
 export function useFunctionsEmulator() {
   const config = useEmulatorConfig('extensions');
-  return `http://${config.hostAndPort}`;
+  return `${config.useHttps ? 'https://' : 'http://'}${config.hostAndPort}`;
 }

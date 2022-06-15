@@ -257,6 +257,7 @@ describe('Auth sagas', () => {
             hostAndPort: 'localhost:9099',
             host: 'localhost',
             port: 9099,
+            useHttps: false
           },
           projectId: 'hello',
         })

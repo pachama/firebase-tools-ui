@@ -37,6 +37,7 @@ const FAKE_CONFIG: Config = {
     hostAndPort: 'localhost:8080',
     webSocketHost: 'localhost',
     webSocketPort: 99999,
+    useHttps: false
   },
 };
 

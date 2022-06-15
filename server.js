@@ -89,6 +89,19 @@ exports.registerApis = function (app) {
         }
       }
 
+      if (json.auth) {
+        json.auth.host = process.env.CLIENT_AUTH_HOST || json.auth.host;
+        json.auth.port = process.env.CLIENT_AUTH_PORT || json.auth.port;
+      }
+      if (process.env.USE_HTTPS) {
+        for (const [key, _] of Object.entries(json)) {
+          if (key === 'projectId') {
+            continue;
+          }
+          json[key].useHttps = true;
+        }
+      }
+
       return json;
     })
   );

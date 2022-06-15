@@ -30,6 +30,7 @@ const sampleConfig: Config = {
     host: 'localhost',
     port: 9000,
     hostAndPort: 'localhost:9000',
+    useHttps: false
   },
 };
 

@@ -25,6 +25,7 @@ const sampleConfig: DatabaseConfig = {
   host: 'localhost',
   port: 9000,
   hostAndPort: 'localhost:9000',
+  useHttps: false
 };
 
 // Skipping because we don't actually have good tests for RTDB.

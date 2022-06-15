@@ -56,6 +56,7 @@ it('shows port for emulator that are loaded and N/A for not loaded', () => {
             host: 'localhost',
             port: 9000,
             hostAndPort: 'localhost:9000',
+            useHttps: false
           },
         }}
       >
@@ -84,6 +85,7 @@ it('shows hosting emulator card', () => {
             host: 'localhost',
             port: 5000,
             hostAndPort: 'localhost:5000',
+            useHttps: true
           },
         }}
       >
@@ -107,6 +109,7 @@ it('links to the hosting website externally', () => {
             host: 'localhost',
             port: 5000,
             hostAndPort: 'localhost:5000',
+            useHttps: true
           },
         }}
       >
@@ -134,6 +137,7 @@ it('shows extensions emulator card', () => {
             host: 'localhost',
             port: 1234,
             hostAndPort: 'localhost:1234',
+            useHttps: true
           },
         }}
       >
@@ -157,6 +161,7 @@ it('shows pubsub emulator card', () => {
             host: 'localhost',
             port: 8085,
             hostAndPort: 'localhost:8085',
+            useHttps: true
           },
         }}
       >
@@ -180,6 +185,7 @@ it('shows storage emulator card', () => {
             host: 'localhost',
             port: 9199,
             hostAndPort: 'localhost:9199',
+            useHttps: true
           },
         }}
       >
@@ -203,6 +209,7 @@ it('shows button for function emulator logs', () => {
             host: 'localhost',
             port: 5001,
             hostAndPort: 'localhost:5001',
+            useHttps: true
           },
         }}
       >
