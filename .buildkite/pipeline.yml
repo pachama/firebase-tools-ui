@@ -32,16 +32,6 @@ steps:
           namespace: 'infra'
           env: 'production'
 
-  - label: ':wrench: Build Ephemeral Image'
-    branches: 'main'
-    plugins:
-      - ssh://git@github.com/pachama/docker-build-buildkite-plugin#v4.0.0:
-          docker_compose_file: 'docker-compose.yml'
-          docker_image: 'infra-firebase'
-          tag: '$VERSION'
-          namespace: 'infra'
-          env: 'ephemeral'
-
   - label: ':wrench: Build Labs Image'
     branches: 'main'
     plugins:
