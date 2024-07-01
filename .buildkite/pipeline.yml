@@ -5,7 +5,7 @@ steps:
   - label: ':wrench: Build Staging Image'
     branches: 'main'
     plugins:
-      - ssh://git@github.com/pachama/docker-build-buildkite-plugin#v3.1.5:
+      - ssh://git@github.com/pachama/docker-build-buildkite-plugin#v4.0.0:
           docker_compose_file: 'docker-compose.yml'
           docker_image: 'infra-firebase'
           tag: '$VERSION'
@@ -15,7 +15,7 @@ steps:
   - label: ':wrench: Build Buildkite Image'
     branches: 'main'
     plugins:
-      - ssh://git@github.com/pachama/docker-build-buildkite-plugin#v3.1.5:
+      - ssh://git@github.com/pachama/docker-build-buildkite-plugin#v4.0.0:
           docker_compose_file: 'docker-compose.yml'
           docker_image: 'infra-firebase'
           tag: '$VERSION'
@@ -25,7 +25,7 @@ steps:
   - label: ':wrench: Build Production Image'
     branches: 'main'
     plugins:
-      - ssh://git@github.com/pachama/docker-build-buildkite-plugin#v3.1.5:
+      - ssh://git@github.com/pachama/docker-build-buildkite-plugin#v4.0.0:
           docker_compose_file: 'docker-compose.yml'
           docker_image: 'infra-firebase'
           tag: '$VERSION'
@@ -35,7 +35,7 @@ steps:
   - label: ':wrench: Build Ephemeral Image'
     branches: 'main'
     plugins:
-      - ssh://git@github.com/pachama/docker-build-buildkite-plugin#v3.1.5:
+      - ssh://git@github.com/pachama/docker-build-buildkite-plugin#v4.0.0:
           docker_compose_file: 'docker-compose.yml'
           docker_image: 'infra-firebase'
           tag: '$VERSION'
